@@ -142,7 +142,13 @@ typedef int32_t   enum_t;
                       (((x) & 0x0000FF0000000000ui64) >> 24) | \
                       (((x) & 0x00FF000000000000ui64) >> 40) | \
                       (((x) & 0xFF00000000000000ui64) >> 56))
-#else /* not __MINGW32__ and not _MSC_VER */
+#elif defined(__APPLE__)
+# include <arpa/inet.h>
+# include <libkern/OSByteOrder.h>
+# define bswap_16 OSSwapInt16
+# define bswap_32 OSSwapInt32
+# define bswap_64 OSSwapInt64
+#else /* not __MINGW32__ and not _MSC_VER and not __APPLE__ */
 # include <byteswap.h>
 # include <arpa/inet.h>
 #endif /* not __MINGW32__ and not _MSC_VER */

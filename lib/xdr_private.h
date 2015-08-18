@@ -56,6 +56,9 @@ void xdr_warnx (const char *fmt, ...);
 #elif defined(__CYGWIN__)
 # include <machine/endian.h>
 # define IEEEFP
+#elif defined(__APPLE__)
+# include <machine/endian.h>
+#  define IEEEFP
 #else  /* not _MSC_VER and not __MINGW32__, and not __CYGWIN__ */
 # if defined(__m68k__) || defined(__sparc__) || defined(__i386__) || \
      defined(__mips__) || defined(__ns32k__) || defined(__alpha__) || \
