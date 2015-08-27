@@ -1,3 +1,5 @@
+# XDR ![Build Status](https://travis-ci.org/bwoods/bsd-xdr.svg?branch=master)
+
 This package contains a port of Sun's XDR library. It was derived from the implementation in the libtirpc package (version 0.1.10–7) from Fedora 11. That version was relicensed with explicit permission from the copyright holder (Sun Microsystems) to a BSD license. See the LICENSE file for more information.
 
 ## The goals of this port
